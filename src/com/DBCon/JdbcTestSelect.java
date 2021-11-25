@@ -1,15 +1,12 @@
-package com.sh;
+package com.DBCon;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import com.DBCon.DBConnection;
+public class JdbcTestSelect {
 
-
-public class SHSH {
-	
 	public static void main(String args[]) throws SQLException {
 
 		Connection conn = null;
