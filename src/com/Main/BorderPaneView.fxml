@@ -10,7 +10,7 @@
 <BorderPane prefHeight="631.0" prefWidth="418.0"
 	xmlns="http://javafx.com/javafx/8.0.171"
 	xmlns:fx="http://javafx.com/fxml/1"
-	fx:controller="application.BorderPaneController">
+	fx:controller="com.Main.BorderPaneController">
 	<bottom>
 		<ButtonBar prefHeight="68.0" prefWidth="498.0"
 			BorderPane.alignment="CENTER">
