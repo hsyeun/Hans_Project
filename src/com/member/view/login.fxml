@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: #1e88e5;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.member.login.RootController">
+   <children>
+      <ImageView fx:id="loginBackImage" fitHeight="600.0" fitWidth="400.0" pickOnBounds="true">
+         <image>
+            <Image url="@../images/background2-2.jpg" />
+         </image>
+      </ImageView>
+      <Pane fx:id="loginBackColor" prefHeight="600.0" prefWidth="400.0" />
+      <HBox alignment="CENTER" layoutY="111.0" prefHeight="42.0" prefWidth="400.0">
+         <children>
+            <Label fx:id="UserLogin" alignment="CENTER" maxWidth="1.7976931348623157E308" text="User Login" textFill="WHITE" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <VBox fx:id="vbox" alignment="CENTER" layoutX="75.0" layoutY="211.0" prefHeight="284.0" prefWidth="250.0" spacing="15.0" style="-fx-background-radius: 5px;">
+         <children>
+            <TextField fx:id="inputID" prefHeight="20.0" prefWidth="190.0" promptText="ID" style="-fx-border-radius: 3px; -fx-background-color: rgba(240, 240, 240, 0.4);">
+               <cursor>
+                  <Cursor fx:constant="NONE" />
+               </cursor>
+            </TextField>
+            <PasswordField fx:id="inputPW" prefHeight="20.0" prefWidth="190.0" promptText="Password" style="-fx-background-color: rgba( 240, 240, 240, 0.4); -fx-border-radius: 3px;" />
+            <Button fx:id="loginOK" mnemonicParsing="false" onAction="#UserLogin" prefWidth="150.0" text="Sign In" />
+            <Button fx:id="UserSignUp" mnemonicParsing="false" onAction="#goUserSignUp" prefWidth="150.0" text="Sign Up" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>
