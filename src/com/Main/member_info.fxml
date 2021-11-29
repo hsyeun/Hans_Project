@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="350.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MemController">
+   <children>
+      <TableView layoutX="9.0" layoutY="66.0" prefHeight="200.0" prefWidth="474.0">
+        <columns>
+            <TableColumn fx:id="tableView" prefWidth="75.0" text="회원코드" />
+          <TableColumn prefWidth="75.0" text="아이디" />
+          <TableColumn prefWidth="86.0" text="이름" />
+            <TableColumn text="휴대폰" />
+            <TableColumn prefWidth="75.0" text="이메일" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+   </children>
+</AnchorPane>
