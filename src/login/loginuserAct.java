@@ -12,14 +12,14 @@ public class loginuserAct {
 	static int member_code;
 	int possess_code;
 	
-public static void userupdate(int user) {
+public static void userupdate(String user) {
 				
 		String runSP = "{ call sp_update_user(?) }";
 
 		try {
 			Connection conn = DBConnection.getConnection();
 			CallableStatement callableStatement = conn.prepareCall(runSP);
-			callableStatement.setInt(1, user);
+			callableStatement.setString(1, user);
 			
 			callableStatement.executeUpdate();	
 			System.out.println("성공");			
