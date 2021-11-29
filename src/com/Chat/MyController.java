@@ -1,4 +1,4 @@
-package com.chat;
+package com.Chat;
 
 import java.io.IOException;
 import java.net.URL;

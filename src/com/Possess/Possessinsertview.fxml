@@ -4,13 +4,23 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane minHeight="100.0" minWidth="100.0" prefHeight="594.0" prefWidth="412.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Possess.PossessinsertController">
+<AnchorPane minHeight="100.0" minWidth="100.0"
+	prefHeight="594.0" prefWidth="412.0"
+	xmlns="http://javafx.com/javafx/8.0.171"
+	xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="com.Possess.PossessinsertController">
 	<children>
-		<TextField fx:id="nametext" layoutX="34.0" layoutY="84.0" prefHeight="24.0" prefWidth="207.0" promptText="책 이름" />
-		<TextField fx:id="writertext" layoutX="34.0" layoutY="131.0" prefHeight="24.0" prefWidth="207.0" promptText="저자" />
-		<TextField fx:id="pubtext" layoutX="34.0" layoutY="181.0" prefHeight="24.0" prefWidth="207.0" promptText="출판사" />
-		<TextField fx:id="covertext" layoutX="34.0" layoutY="233.0" prefHeight="24.0" prefWidth="207.0" promptText="표지 사진" />
-		<Button fx:id="insertbutton" layoutX="297.0" layoutY="248.0" mnemonicParsing="false" onAction="#insertinfo" text="등록" />
-		<Button fx:id="exitButton" layoutX="333.0" layoutY="520.0" mnemonicParsing="false" onAction="#exitinsertview" text="완료" />
+		<TextField fx:id="nametext" layoutX="34.0" layoutY="84.0"
+			prefHeight="24.0" prefWidth="207.0" promptText="책 이름" />
+		<TextField fx:id="writertext" layoutX="34.0" layoutY="131.0"
+			prefHeight="24.0" prefWidth="207.0" promptText="저자" />
+		<TextField fx:id="pubtext" layoutX="34.0" layoutY="181.0"
+			prefHeight="24.0" prefWidth="207.0" promptText="출판사" />
+		<TextField fx:id="covertext" layoutX="34.0" layoutY="233.0"
+			prefHeight="24.0" prefWidth="207.0" promptText="표지 사진" />
+		<Button fx:id="insertbutton" layoutX="297.0" layoutY="248.0"
+			mnemonicParsing="false" onAction="#insertinfo" text="등록" />
+		<Button fx:id="exitButton" layoutX="333.0" layoutY="520.0"
+			mnemonicParsing="false" onAction="#exitinsertview" text="완료" />
 	</children>
 </AnchorPane>

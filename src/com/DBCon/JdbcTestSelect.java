@@ -17,7 +17,7 @@ public class JdbcTestSelect {
 
 		try {
 			stmt = conn.createStatement();
-			rset = stmt.executeQuery("SELECT * FROM member");
+			rset = stmt.executeQuery("SELECT * FROM book b, member m where b.book_code=m.member_code");
 
 			while (rset.next()) {
 				System.out.print(rset.getInt(1) + " ");

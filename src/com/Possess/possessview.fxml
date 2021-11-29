@@ -9,7 +9,7 @@
 	prefHeight="685.0" prefWidth="476.0"
 	xmlns="http://javafx.com/javafx/8.0.171"
 	xmlns:fx="http://javafx.com/fxml/1"
-	fx:controller="Possess.PossessController">
+	fx:controller="com.Possess.PossessController">
 	<children>
 		<Button fx:id="addBookButton" layoutX="85.0" layoutY="618.0"
 			mnemonicParsing="false" onAction="#changeview" text="책 추가" />

@@ -34,6 +34,7 @@ public class DBConnection {
 		String url = properties.getProperty("url");
 		String user = properties.getProperty("user");
 		String pwd = properties.getProperty("password");
+		
 
 		try {
 			Class.forName(driverName);

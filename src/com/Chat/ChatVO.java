@@ -1,4 +1,4 @@
-package com.chat;
+package com.Chat;
 
 //import java.sql.Date;
 

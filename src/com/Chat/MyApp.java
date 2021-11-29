@@ -1,4 +1,4 @@
-package com.chat;
+package com.Chat;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
