@@ -3,7 +3,7 @@ package com.chat;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import javafx.collections.FXCollections;
+//import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -47,7 +47,7 @@ public class MyController implements Initializable {
 
 	public void addChat(ActionEvent event) {
 		ChatVO chat = new ChatVO();
-		chat.setChat_writer(10109);
+		chat.setChat_writer(10102);
 		chat.setChat_text(textAmu.getText());
 		chat.setPossess_code(205);
 		

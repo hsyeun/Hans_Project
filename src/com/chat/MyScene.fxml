@@ -10,7 +10,7 @@
 	prefHeight="471.0" prefWidth="288.0"
 	xmlns="http://javafx.com/javafx/8.0.171"
 	xmlns:fx="http://javafx.com/fxml/1"
-	fx:controller="com.chat.MyController">
+	fx:controller="application.MyController">
 
 	<children>
 		<Button fx:id="chatButton" layoutX="209.0" layoutY="396.0"

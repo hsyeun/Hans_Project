@@ -1,12 +1,12 @@
 package com.chat;
 
-import java.math.BigDecimal;
+//import java.math.BigDecimal;
 import java.sql.CallableStatement;
 import java.sql.Connection;
-import java.sql.Date;
+//import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Scanner;
+//import java.util.Scanner;
 
 
 import javafx.collections.FXCollections;
@@ -17,10 +17,12 @@ public class SelectT1 {
 
 	public static ObservableList<ChatVO> ChatSelct(int p_code) {
 		ObservableList<ChatVO> chatvos = FXCollections.observableArrayList();
+		
+
+//		Scanner sc = new Scanner(System.in);
 
 
-
-		String runSP = "{ call sp_select_t1(?, ?) }";
+		String runSP = "{ call sp_select_chat(?, ?) }";
 
 		try {
 			Connection conn = DBConnection.getConnection();

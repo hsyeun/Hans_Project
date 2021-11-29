@@ -1,12 +1,12 @@
 package com.chat;
 
-import java.math.BigDecimal;
+//import java.math.BigDecimal;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.sql.Timestamp;
-import java.time.LocalDateTime;
-import java.util.Scanner;
+//import java.sql.Timestamp;
+//import java.time.LocalDateTime;
+//import java.util.Scanner;
 
 public class InsertT1 {
 
@@ -15,7 +15,7 @@ public class InsertT1 {
 //		Scanner sc = new Scanner(System.in);
 
 				
-		String runSP = "{ call sp_insert_t1(?, ?, ?) }";
+		String runSP = "{ call sp_insert_chat(?, ?, ?) }";
 
 		try {
 			Connection conn = DBConnection.getConnection();
