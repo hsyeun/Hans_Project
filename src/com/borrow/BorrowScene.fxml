@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane minHeight="100.0" minWidth="100.0" prefHeight="663.0" prefWidth="466.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Borrow.BorrowController">
+	<children>
+		<Button fx:id="BorrowButton" layoutX="270.0" layoutY="600.0" mnemonicParsing="false" onAction="#BorrowAction" text="대여" />
+      <TableView fx:id="tableBorrowView" layoutX="27.0" layoutY="26.0" prefHeight="551.0" prefWidth="425.0">
+        <columns>
+          <TableColumn fx:id="tableBorrowList" prefWidth="327.0" text="대여목록 " />
+            <TableColumn fx:id="BorrowCode" prefWidth="95.0" text="대여번호" />
+        </columns>
+      </TableView>
+      <Button fx:id="ReturnButton" layoutX="337.0" layoutY="600.0" mnemonicParsing="false" onAction="#ReturnAction" text="반납" />
+      <TextField fx:id="inputPossess" layoutX="98.0" layoutY="600.0" promptText="inputPossess" />
+	</children>
+</AnchorPane>
