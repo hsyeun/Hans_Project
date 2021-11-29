@@ -1,4 +1,4 @@
-package com.borrow;
+package com.Borrow;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

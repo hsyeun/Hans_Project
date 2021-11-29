@@ -13,6 +13,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import login.loginuserAct;
 
 public class MyController implements Initializable {
 
@@ -47,9 +48,9 @@ public class MyController implements Initializable {
 
 	public void addChat(ActionEvent event) {
 		ChatVO chat = new ChatVO();
-		chat.setChat_writer(10102);
+		chat.setChat_writer(loginuserAct.userup());
 		chat.setChat_text(textAmu.getText());
-		chat.setPossess_code(205);
+		chat.setPossess_code(loginuserAct.pos_code_up());
 		
 		InsertT1.ChatInsert(chat);
 		tableView.getItems().addAll(chat);
@@ -58,9 +59,9 @@ public class MyController implements Initializable {
 
 	}
 
-	// 모든 product
+
 	public ObservableList<ChatVO> getChat() {
-		return SelectT1.ChatSelct(205);
+		return SelectT1.ChatSelct(loginuserAct.pos_code_up());
 	}
 
 }

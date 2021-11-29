@@ -19,9 +19,6 @@ public class SelectT1 {
 		ObservableList<ChatVO> chatvos = FXCollections.observableArrayList();
 		
 
-//		Scanner sc = new Scanner(System.in);
-
-
 		String runSP = "{ call sp_select_chat(?, ?) }";
 
 		try {
@@ -44,7 +41,8 @@ public class SelectT1 {
 					chat.setChat_text(resultSet.getString(3));
 					chat.setChat_date(String.valueOf(resultSet.getDate(4)));
 					chat.setChat_show(resultSet.getString(5));
-					chat.setPossess_code(resultSet.getInt(6));
+					chat.setMember_id(resultSet.getString(6));
+					chat.setPossess_code(resultSet.getInt(7));
 					
 					chatvos.add(chat);
 					
@@ -62,7 +60,6 @@ public class SelectT1 {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-//			sc.close();
 		}
 		return chatvos;
 	}

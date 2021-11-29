@@ -11,10 +11,7 @@ import java.sql.SQLException;
 public class InsertT1 {
 
 	public static void ChatInsert(ChatVO chat) {
-		
-//		Scanner sc = new Scanner(System.in);
 
-				
 		String runSP = "{ call sp_insert_chat(?, ?, ?) }";
 
 		try {
@@ -31,7 +28,7 @@ public class InsertT1 {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-//			sc.close();
+
 		}
 	}
 

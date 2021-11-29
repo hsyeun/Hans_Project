@@ -11,16 +11,18 @@ public class ChatVO {
 	private String chat_text;
 	private String chat_date;
 	private String chat_show;
+	private String member_id;
 	private int possess_code;
 	private String memo;
 
 	ChatVO () {
+		member_id = "나";
 		chat_date = "지금"; 
 	}
 	
-	void setChat_text(String text) {
-		chat_text=text;
-		memo = chat_writer + " : " + chat_text;			
+	void setPossess_code(int code) {
+		possess_code = code;
+		memo = member_id + " : " + chat_text;			
 	}
 
 }

@@ -1,4 +1,4 @@
-package com.borrow;
+package com.Borrow;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -12,6 +12,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import login.loginuserAct;
 import javafx.scene.control.TableColumn;
 
 public class BorrowController implements Initializable {
@@ -35,7 +36,7 @@ public class BorrowController implements Initializable {
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
 		
-		tableBorrowList.setCellValueFactory(new PropertyValueFactory<>("possess_code"));
+		tableBorrowList.setCellValueFactory(new PropertyValueFactory<>("book_name"));
 		BorrowCode.setCellValueFactory(new PropertyValueFactory<>("borrow_code"));
 		
 		tableBorrowView.setItems(getBorrowList());
@@ -44,7 +45,7 @@ public class BorrowController implements Initializable {
 
 	public void BorrowAction(ActionEvent event) {
 		BorrowListVO boli = new BorrowListVO();
-		boli.setBorrow_lender(10109);
+		boli.setBorrow_lender(loginuserAct.userup());
 		boli.setPossess_code(Integer.parseInt(inputPossess.getText()));
 		
 		int pos_status = BorrowAct.BorrowUniqueInsert(boli);
@@ -65,7 +66,7 @@ public class BorrowController implements Initializable {
 	}
 	
 	public ObservableList<BorrowListVO> getBorrowList() {
-		return BorrowAct.BorrowSelect(10109);
+		return BorrowAct.BorrowSelect(loginuserAct.userup());
 	}
 
 }

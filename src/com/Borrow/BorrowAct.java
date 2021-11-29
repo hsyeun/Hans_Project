@@ -1,4 +1,4 @@
-package com.borrow;
+package com.Borrow;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;
@@ -86,11 +86,15 @@ public class BorrowAct {
 
 				while (resultSet.next()) {
 					BorrowListVO boli = new BorrowListVO();
-					boli.setBorrow_code(resultSet.getInt(1));
-					boli.setPossess_code(resultSet.getInt(2));
-					boli.setBorrow_lender(resultSet.getInt(3));
-					boli.setBorrow_date(resultSet.getDate(4));
-					boli.setStatus_check(resultSet.getInt(5));
+					boli.setBook_name(resultSet.getString(1));
+					boli.setBook_writer(resultSet.getString(2));
+					boli.setBook_pub(resultSet.getString(3));
+					boli.setPossess_holder(resultSet.getInt(4));
+					boli.setBorrow_date(resultSet.getDate(5));
+					boli.setBorrow_code(resultSet.getInt(6));
+					boli.setPossess_code(resultSet.getInt(7));
+					boli.setBorrow_lender(resultSet.getInt(8));
+					boli.setStatus_check(resultSet.getInt(9));
 
 					bolis.add(boli);
 
