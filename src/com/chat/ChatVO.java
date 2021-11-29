@@ -25,4 +25,5 @@ public class ChatVO {
 		memo = member_id + " : " + chat_text;			
 	}
 
+
 }
