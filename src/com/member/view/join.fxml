@@ -12,42 +12,76 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.member.login.RootController">
-   <children>
-      <ImageView fx:id="usersignupBackImage" fitHeight="600.0" fitWidth="400.0" pickOnBounds="true">
-         <image>
-            <Image url="@../images/background2-2.jpg" />
-         </image>
-      </ImageView>
-      <Pane fx:id="usersignupBackColor" prefHeight="600.0" prefWidth="400.0">
-         <children>
-            <HBox alignment="CENTER" layoutY="367.0" prefHeight="37.0" prefWidth="400.0">
-               <padding>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </padding>
-            </HBox>
-            <Button fx:id="submitBtn" layoutX="166.0" layoutY="499.0" mnemonicParsing="false" onAction="#submitUserSignup" prefWidth="80.0" text="submit" />
-            <Label alignment="CENTER_RIGHT" layoutX="37.0" layoutY="184.0" prefHeight="14.0" prefWidth="52.0" text="ID" textAlignment="RIGHT" textFill="WHITE" />
-            <TextField fx:id="jid" layoutX="114.0" layoutY="178.0" promptText="아이디" />
-            <Label alignment="CENTER_RIGHT" layoutX="39.0" layoutY="218.0" prefHeight="14.0" prefWidth="52.0" text="PW" textAlignment="RIGHT" textFill="WHITE" />
-            <PasswordField fx:id="jpw" layoutX="114.0" layoutY="211.0" promptText="비밀번호" />
-            <Label alignment="CENTER_RIGHT" layoutX="39.0" layoutY="250.0" prefHeight="14.0" prefWidth="52.0" text="PW2" textAlignment="RIGHT" textFill="WHITE" />
-            <PasswordField fx:id="jpwc" layoutX="115.0" layoutY="245.0" promptText="비밀번호 확인" />
-            <Label alignment="CENTER_RIGHT" layoutX="40.0" layoutY="283.0" prefHeight="14.0" prefWidth="52.0" text="NAME" textFill="WHITE" />
-            <TextField fx:id="jname" layoutX="116.0" layoutY="278.0" promptText="이름" />
-            <Label alignment="CENTER_RIGHT" layoutX="41.0" layoutY="317.0" prefHeight="14.0" prefWidth="52.0" text="PHONE" textAlignment="RIGHT" textFill="WHITE" />
-            <TextField fx:id="jphone" layoutX="116.0" layoutY="312.0" promptText="01000000000" />
-            <Label alignment="CENTER_RIGHT" layoutX="42.0" layoutY="350.0" prefHeight="14.0" prefWidth="52.0" text="E-MAIL" textAlignment="RIGHT" textFill="WHITE" />
-            <TextField fx:id="jemail" layoutX="115.0" layoutY="345.0" promptText="abc@email.com" />
-            <Label alignment="CENTER_RIGHT" layoutX="16.0" layoutY="381.0" prefHeight="21.0" prefWidth="80.0" text="S-NUMBER" textAlignment="RIGHT" textFill="WHITE" />
-            <TextField fx:id="jsnum" layoutX="115.0" layoutY="378.0" promptText="201000555" />
-            <Label alignment="CENTER_RIGHT" layoutX="43.0" layoutY="413.0" prefHeight="14.0" prefWidth="52.0" text="MAJOR" textAlignment="RIGHT" textFill="WHITE" />
-            <TextField fx:id="jmajor" layoutX="114.0" layoutY="411.0" promptText="ㅇㅇㅇ과" />
-         </children></Pane>
-      <Label fx:id="UserSignupLabel" layoutX="156.0" layoutY="80.0" text="Sign-Up" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="25.0" />
-         </font>
-      </Label>
-   </children>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity"
+	minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0"
+	prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.171"
+	xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="com.member.RootController">
+	<children>
+		<ImageView fx:id="usersignupBackImage" fitHeight="600.0"
+			fitWidth="400.0" pickOnBounds="true">
+			<image>
+				<Image url="@../images/background2-2.jpg" />
+			</image>
+		</ImageView>
+		<Pane fx:id="usersignupBackColor" prefHeight="600.0"
+			prefWidth="400.0">
+			<children>
+				<HBox alignment="CENTER" layoutY="367.0" prefHeight="37.0"
+					prefWidth="400.0">
+					<padding>
+						<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+					</padding>
+				</HBox>
+				<Button fx:id="submitBtn" layoutX="166.0" layoutY="499.0"
+					mnemonicParsing="false" onAction="#submitUserSignup"
+					prefWidth="80.0" text="submit" />
+				<Label alignment="CENTER_RIGHT" layoutX="37.0" layoutY="184.0"
+					prefHeight="14.0" prefWidth="52.0" text="ID" textAlignment="RIGHT"
+					textFill="WHITE" />
+				<TextField fx:id="jid" layoutX="114.0" layoutY="178.0"
+					promptText="아이디" />
+				<Label alignment="CENTER_RIGHT" layoutX="39.0" layoutY="218.0"
+					prefHeight="14.0" prefWidth="52.0" text="PW" textAlignment="RIGHT"
+					textFill="WHITE" />
+				<PasswordField fx:id="jpw" layoutX="114.0"
+					layoutY="211.0" promptText="비밀번호" />
+				<Label alignment="CENTER_RIGHT" layoutX="39.0" layoutY="250.0"
+					prefHeight="14.0" prefWidth="52.0" text="PW2" textAlignment="RIGHT"
+					textFill="WHITE" />
+				<PasswordField fx:id="jpwc" layoutX="115.0"
+					layoutY="245.0" promptText="비밀번호 확인" />
+				<Label alignment="CENTER_RIGHT" layoutX="40.0" layoutY="283.0"
+					prefHeight="14.0" prefWidth="52.0" text="NAME" textFill="WHITE" />
+				<TextField fx:id="jname" layoutX="116.0" layoutY="278.0"
+					promptText="이름" />
+				<Label alignment="CENTER_RIGHT" layoutX="41.0" layoutY="317.0"
+					prefHeight="14.0" prefWidth="52.0" text="PHONE"
+					textAlignment="RIGHT" textFill="WHITE" />
+				<TextField fx:id="jphone" layoutX="116.0" layoutY="312.0"
+					promptText="01000000000" />
+				<Label alignment="CENTER_RIGHT" layoutX="42.0" layoutY="350.0"
+					prefHeight="14.0" prefWidth="52.0" text="E-MAIL"
+					textAlignment="RIGHT" textFill="WHITE" />
+				<TextField fx:id="jemail" layoutX="115.0" layoutY="345.0"
+					promptText="abc@email.com" />
+				<Label alignment="CENTER_RIGHT" layoutX="16.0" layoutY="381.0"
+					prefHeight="21.0" prefWidth="80.0" text="S-NUMBER"
+					textAlignment="RIGHT" textFill="WHITE" />
+				<TextField fx:id="jsnum" layoutX="115.0" layoutY="378.0"
+					promptText="201000555" />
+				<Label alignment="CENTER_RIGHT" layoutX="43.0" layoutY="413.0"
+					prefHeight="14.0" prefWidth="52.0" text="MAJOR"
+					textAlignment="RIGHT" textFill="WHITE" />
+				<TextField fx:id="jmajor" layoutX="114.0" layoutY="411.0"
+					promptText="ㅇㅇㅇ과" />
+			</children>
+		</Pane>
+		<Label fx:id="UserSignupLabel" layoutX="156.0" layoutY="80.0"
+			text="Sign-Up" textFill="WHITE">
+			<font>
+				<Font name="System Bold" size="25.0" />
+			</font>
+		</Label>
+	</children>
 </AnchorPane>

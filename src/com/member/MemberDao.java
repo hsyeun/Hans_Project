@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import oracle.jdbc.OracleTypes;
-import com.DBCon.DBConnection;
+import application.DBConnection;
 import login.loginuserAct;
 
 public class MemberDao {
@@ -67,52 +67,52 @@ public class MemberDao {
 //		return mCode;
 //	}
 	
-	public static MemberVO MemberSelect(String mid){
-		MemberVO mVO = new MemberVO();
-		
-		String run = "{ call memberlist(?, ?) }";
-		
-		try {
-			Connection conn = DBConnection.getConnection();
-			CallableStatement callableStatement = conn.prepareCall(run);
-
-			callableStatement.setString(1, mid);
-			callableStatement.registerOutParameter(2, OracleTypes.CURSOR);
-			System.out.println();
-			
-			try {
-				callableStatement.execute();
-				ResultSet rs = (ResultSet) callableStatement.getObject(2);
-
-				while (rs.next()) {
-				
-					mVO.setMember_code(rs.getInt(1));
-					mVO.setMember_id(rs.getString(2));
-					mVO.setMember_pw(rs.getString(3));
-					mVO.setMember_name(rs.getString(4));
-					mVO.setMember_phone(rs.getInt(5));
-					mVO.setMember_email(rs.getString(6));
-					mVO.setMember_num(rs.getInt(7));
-					mVO.setMember_major(rs.getString(8));
-					mVO.setMember_show(rs.getString(9));
-
-		
-				}
-
-				System.out.println("성공");
-
-			} catch (SQLException e) {
-				System.out.println("프로시저에서 에러 발생!");
-				// System.err.format("SQL State: %s", e.getSQLState());
-				System.err.format("SQL State: %s\n%s", e.getSQLState(), e.getMessage());
-			}
-		}catch(SQLException e) {
-			e.printStackTrace();
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
-		return mVO;
-	}
+//	public static MemberVO MemberSelect(String mid){
+//		MemberVO mVO = new MemberVO();
+//		
+//		String run = "{ call memberlist(?, ?) }";
+//		
+//		try {
+//			Connection conn = DBConnection.getConnection();
+//			CallableStatement callableStatement = conn.prepareCall(run);
+//
+//			callableStatement.setString(1, mid);
+//			callableStatement.registerOutParameter(2, OracleTypes.CURSOR);
+//			System.out.println();
+//			
+//			try {
+//				callableStatement.execute();
+//				ResultSet rs = (ResultSet) callableStatement.getObject(2);
+//
+//				while (rs.next()) {
+//				
+//					mVO.setMember_code(rs.getInt(1));
+//					mVO.setMember_id(rs.getString(2));
+//					mVO.setMember_pw(rs.getString(3));
+//					mVO.setMember_name(rs.getString(4));
+//					mVO.setMember_phone(rs.getInt(5));
+//					mVO.setMember_email(rs.getString(6));
+//					mVO.setMember_num(rs.getInt(7));
+//					mVO.setMember_major(rs.getString(8));
+//					mVO.setMember_show(rs.getString(9));
+//
+//		
+//				}
+//
+//				System.out.println("성공");
+//
+//			} catch (SQLException e) {
+//				System.out.println("프로시저에서 에러 발생!");
+//				// System.err.format("SQL State: %s", e.getSQLState());
+//				System.err.format("SQL State: %s\n%s", e.getSQLState(), e.getMessage());
+//			}
+//		}catch(SQLException e) {
+//			e.printStackTrace();
+//		}catch(Exception e) {
+//			e.printStackTrace();
+//		}
+//		return mVO;
+//	}
 		
 	public static void JoinInsert(MemberVO mVO) {
 						
@@ -143,22 +143,30 @@ public class MemberDao {
 		}
 	}
 	
-	public static int MyPage(MemberVO mVO) {
-		int myInfo = 0;
-		String run = "SELECT * FROM MEMBER WHERE member_show = 'Y' and member_id = ?";
+	
+	
+	public static MemberVO MyPage(int mem_code) {
+		MemberVO mVO = new MemberVO();
+		String run = "SELECT * FROM MEMBER WHERE member_show = 'Y' and member_code = ?";
 		
 		try {
 			Connection conn = DBConnection.getConnection();
 			PreparedStatement prst = conn.prepareCall(run);
-			prst.setString(1, mVO.getMember_id());
+			prst.setInt(1, mem_code);
 			ResultSet rs = prst.executeQuery();	
 			
-			mVO.setMember_pw(rs.getString("member_pw"));
-			mVO.setMember_name(rs.getString("member_name"));
-			mVO.setMember_phone(rs.getInt("member_phone"));
-			mVO.setMember_email(rs.getString("member_email"));
-			mVO.setMember_num(rs.getInt("member_num"));
-			mVO.setMember_major(rs.getString("member_major"));
+			while (rs.next()) {
+					mVO.setMember_code(rs.getInt(1));
+					mVO.setMember_id(rs.getString(2));
+					mVO.setMember_pw(rs.getString(3));
+					mVO.setMember_name(rs.getString(4));
+					mVO.setMember_phone(rs.getInt(5));
+					mVO.setMember_email(rs.getString(6));
+					mVO.setMember_num(rs.getInt(7));
+					mVO.setMember_major(rs.getString(8));
+					mVO.setMember_show(rs.getString(9));
+				}
+			System.out.println("성공");
 
 		} catch (SQLException e) {
 			System.err.format("SQL State: %s\n%s", e.getSQLState(), e.getMessage());
@@ -166,8 +174,7 @@ public class MemberDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-//			sc.close();
 		}
-		return myInfo;
+		return mVO;
 	}
 }

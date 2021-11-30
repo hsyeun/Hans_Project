@@ -28,7 +28,7 @@ import login.loginuserAct;
 public class MyController implements Initializable {
 
 	@FXML
-	private Button chatButton, exitbutton;
+	private Button chatButton;
 
 	@FXML
 	private TextField textAmu;
@@ -98,10 +98,4 @@ public class MyController implements Initializable {
 		dialog2.show();
 	}
 
-	public void out(ActionEvent event) throws Exception {
-		Stage stage11 = (Stage) exitbutton.getScene().getWindow();
-		Platform.runLater(() -> {
-			stage11.close();
-		});
-	}
 }

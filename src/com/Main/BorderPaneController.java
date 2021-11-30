@@ -55,10 +55,16 @@ public class BorderPaneController implements Initializable {
 	}
 
 	public void handlebtn3(ActionEvent event) throws Exception {
-		Parent root = FXMLLoader.load(getClass().getResource("scene3.fxml"));
-		Stage window = (Stage) btn3.getScene().getWindow();
-		window.setScene(new Scene(root, 700, 350));
-
+		Stage primaryStage = new Stage();
+		Parent root;
+		try {
+			root = FXMLLoader.load(getClass().getResource("/com/member/view/mypage.fxml"));
+			Scene scene = new Scene(root);
+			primaryStage.setScene(scene);
+			primaryStage.show();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@FXML
@@ -105,7 +111,6 @@ public class BorderPaneController implements Initializable {
 	private void showinfo(MouseEvent event) throws IOException {
 		if (event.getClickCount() != 2)
 			return;
-		loginuserAct.pos_code_update(0);
 
 		Stage dialog2 = new Stage(StageStyle.UTILITY);
 		dialog2.initModality(Modality.WINDOW_MODAL);
