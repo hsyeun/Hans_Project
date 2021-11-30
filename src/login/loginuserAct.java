@@ -117,4 +117,41 @@ try {
 }
 return member_code;
 }
+
+
+
+
+
+public static int lenderinfo() {
+
+	String runSP = "{ call sp_lenderinfo(?) }";
+
+	try {
+		Connection conn = DBConnection.getConnection();
+		CallableStatement callableStatement = conn.prepareCall(runSP);
+
+		callableStatement.registerOutParameter(1, OracleTypes.NUMBER);
+		System.out.println();
+
+		try {
+			callableStatement.execute();
+			member_code = callableStatement.getInt(1);
+			System.out.println(member_code);
+			
+			System.out.println("성공");
+
+		} catch (SQLException e) {
+			System.out.println("프로시저에서 에러 발생!");
+			// System.err.format("SQL State: %s", e.getSQLState());
+			System.err.format("SQL State: %s\n%s", e.getSQLState(), e.getMessage());
+		}
+	} catch (SQLException e) {
+		e.printStackTrace();
+	} catch (Exception e) {
+		e.printStackTrace();
+	} finally {
+	}
+	return member_code;
+}
+
 }

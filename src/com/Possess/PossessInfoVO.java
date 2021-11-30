@@ -1,5 +1,6 @@
 package com.Possess;
 
+import login.loginuserAct;
 import lombok.Data;
 
 @Data
@@ -13,6 +14,7 @@ public class PossessInfoVO {
 	int possess_holder;
 	String possess_cover;
 	String status_check;
+	int lender;
 	
 	
 	void setStatus_check(int sc) {
@@ -20,6 +22,7 @@ public class PossessInfoVO {
 			status_check = "대여가능";
 		} else {
 			status_check = "대여중";
+			lender = loginuserAct.lenderinfo();
 		}
 	}
 

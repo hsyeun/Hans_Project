@@ -1,7 +1,10 @@
-package com.member;
+package com.Possess;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import com.member.MemberDao;
+import com.member.MemberVO;
 
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -19,21 +22,21 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import login.loginuserAct;
 
-public class mypageController implements Initializable {
+public class lenderinfoController implements Initializable {
 
 	// mypage
 	@FXML
 	private Button cancelBtn;
 	@FXML
-	private TextField selectID, selectPW, selectName, selectPhone, selectEmail, selectSnum, selectMajor;
+	private TextField selectID,  selectPhone, selectEmail;
 	@FXML
 	private ListView<String> listView;
 	@FXML
 	private TextArea textArea;
 	@FXML
-	private TableView<MemberVO> tableMemberView;
+	private TableView<PossessInfoVO> tableMemberView;
 	@FXML
-	private TableColumn<MemberVO, Integer> tableMemberList;
+	private TableColumn<PossessInfoVO, Integer> tableMemberList;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -44,15 +47,13 @@ public class mypageController implements Initializable {
 
 	public void getinfo() {
 		try {
-			MemberVO mVO = getMember(loginuserAct.userup());
+			
+			MemberVO mVO = getMember(loginuserAct.lenderinfo());
 	
 			selectID.setText(mVO.getMember_id());
-			selectPW.setText(mVO.getMember_pw());
-			selectName.setText(mVO.getMember_name());
 			selectPhone.setText(String.valueOf(mVO.getMember_phone()));
 			selectEmail.setText(mVO.getMember_email());
-			selectSnum.setText(String.valueOf(mVO.getMember_num()));
-			selectMajor.setText(mVO.getMember_major());
+
 		} catch (NullPointerException e) {
 			e.printStackTrace();
 		} catch (Exception e) {
@@ -70,6 +71,7 @@ public class mypageController implements Initializable {
 		Platform.runLater(() -> {
 			stage11.close();
 		});
+
 	}
 
 }
