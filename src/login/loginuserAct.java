@@ -66,14 +66,14 @@ public static int userup() {
 
 
 
-public static void pos_code_update(int user) {
+public static void pos_code_update(int pos_code) {
 	
 	String runSP = "{ call sp_update_book(?) }";
 
 	try {
 		Connection conn = DBConnection.getConnection();
 		CallableStatement callableStatement = conn.prepareCall(runSP);
-		callableStatement.setInt(1, user);
+		callableStatement.setInt(1, pos_code);
 		
 		callableStatement.executeUpdate();	
 		System.out.println("성공");			

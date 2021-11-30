@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import javafx.application.Platform;
 //import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -27,7 +28,7 @@ import login.loginuserAct;
 public class MyController implements Initializable {
 
 	@FXML
-	private Button chatButton;
+	private Button chatButton, exitbutton;
 
 	@FXML
 	private TextField textAmu;
@@ -49,6 +50,7 @@ public class MyController implements Initializable {
 		memo.setCellValueFactory(new PropertyValueFactory<>("memo"));
 		date.setCellValueFactory(new PropertyValueFactory<>("chat_date"));
 		tableView.setItems(getChat());
+
 	}
 
 	// When user click on myButton
@@ -71,28 +73,35 @@ public class MyController implements Initializable {
 		return SelectT1.ChatSelct(loginuserAct.pos_code_up());
 	}
 
-	
 	@FXML
-	private void showinfo(MouseEvent event) throws IOException{
-		if (event.getClickCount() != 2) return;
+	private void showinfo(MouseEvent event) throws IOException {
+		if (event.getClickCount() != 2)
+			return;
 
-			Stage dialog2 = new Stage(StageStyle.UTILITY);
-			dialog2.initModality(Modality.WINDOW_MODAL);
-			dialog2.initOwner(chatButton.getScene().getWindow());
-			dialog2.setTitle("text");
-			Parent parent2 = FXMLLoader.load(getClass().getResource("form2.fxml"));
-	
-			Button btnFormCancel = (Button) parent2.lookup("#btnFormCancel2");
-			Label label = (Label) parent2.lookup("#TenNameLabel");
+		Stage dialog2 = new Stage(StageStyle.UTILITY);
+		dialog2.initModality(Modality.WINDOW_MODAL);
+		dialog2.initOwner(chatButton.getScene().getWindow());
+		dialog2.setTitle("text");
+		Parent parent2 = FXMLLoader.load(getClass().getResource("form2.fxml"));
+
+		Button btnFormCancel = (Button) parent2.lookup("#btnFormCancel2");
+		Label label = (Label) parent2.lookup("#TenNameLabel");
 //			//label con
 //			
-			ChatVO chat = tableView.getSelectionModel().getSelectedItem();
-			label.setText(chat.getMemo() + " " + chat.getChat_date());
-			
-			btnFormCancel.setOnAction(e2->dialog2.close());		
-			Scene scene2 = new Scene(parent2);
-			dialog2.setScene(scene2);
-			dialog2.setResizable(false);
-			dialog2.show();	
+		ChatVO chat = tableView.getSelectionModel().getSelectedItem();
+		label.setText(chat.getMemo() + " " + chat.getChat_date());
+
+		btnFormCancel.setOnAction(e2 -> dialog2.close());
+		Scene scene2 = new Scene(parent2);
+		dialog2.setScene(scene2);
+		dialog2.setResizable(false);
+		dialog2.show();
+	}
+
+	public void out(ActionEvent event) throws Exception {
+		Stage stage11 = (Stage) exitbutton.getScene().getWindow();
+		Platform.runLater(() -> {
+			stage11.close();
+		});
 	}
 }
