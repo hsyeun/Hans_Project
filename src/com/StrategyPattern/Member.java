@@ -19,8 +19,6 @@ public abstract class Member {
 	public void setBorrow(BorrowBehavior borrow) {
 		this.borrow = borrow;
 	}
-
-	public Member() {}
 	
 	public abstract void status();
 	
