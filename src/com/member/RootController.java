@@ -135,10 +135,10 @@ public class RootController implements Initializable {
 			joinSuccess.showAndWait();
 
 			try {
-				Parent members = FXMLLoader.load(getClass().getResource("/com/Main/BorderPaneView.fxml"));
+				Parent members = FXMLLoader.load(getClass().getResource("view/login.fxml"));
 				Scene scene = new Scene(members);
 				Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-				primaryStage.setTitle("Join");
+				primaryStage.setTitle("login");
 				primaryStage.setScene(scene);
 			} catch (Exception e) {
 				e.printStackTrace();
