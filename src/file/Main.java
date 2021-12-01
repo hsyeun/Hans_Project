@@ -30,14 +30,14 @@ public class Main extends Application {
         pane.setVgap(10);
 
         // Create a button to choose a file
-        Button btChooseFile = new Button("Ã¥ Ç¥Áö µî·ÏÇÏ±â");
+        Button btChooseFile = new Button("ì´ë¯¸ì§€ ë¶ˆëŸ¬ì˜¤ê¸°");
         pane.add(btChooseFile, 25, 15);
 
         
 
         // Set the primary stage properties
         primaryStage.setScene(new Scene(pane, 400, 300));
-        primaryStage.setTitle("µµ¼­Á¤º¸");
+        primaryStage.setTitle("ì´ë¯¸ì§€ ë¶ˆëŸ¬ì˜¤ê¸°");
         primaryStage.setResizable(false);
         primaryStage.show();
 
@@ -46,7 +46,7 @@ public class Main extends Application {
             @Override
             public void handle(ActionEvent event) {
                 FileChooser fileChooser = new FileChooser();
-                fileChooser.setTitle("Ã¥ Ç¥Áö µî·ÏÇÏ±â");
+                fileChooser.setTitle("ì´ë¯¸ì§€ ë¶ˆëŸ¬ì˜¤ê¸°");
 //                fileChooser.getExtensionFilters().add(new ExtensionFilter("Text Files", "*.txt"));
 //                fileChooser.getExtensionFilters().add(new ExtensionFilter("All Files", "*.*"));
                 fileChooser.getExtensionFilters().addAll(new ExtensionFilter("Text Files", "*.txt"), new ExtensionFilter("All Files", "*.*"));

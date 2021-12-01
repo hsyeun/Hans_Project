@@ -92,8 +92,9 @@ public class PossessController implements Initializable {
 //			//label con
 //			
 		PossessInfoVO book = tablePossessView.getSelectionModel().getSelectedItem();
-		label.setText("책 이름 : " + book.getBook_name() + '\n' + "저자 : " + book.getBook_writer() + '\n' + "출판사 : "
-				+ '\n' + "대여 상태 : " + book.getStatus_check() + '\n' + "책 코드 : " + book.getPossess_code() + '\n');
+		label.setText("책 이름 : " + book.getBook_name() + '\n' + "저자 : " + book.getBook_writer() + '\n' 
+				+ "출판사 : " + book.getBook_pub() + '\n' 
+				+ "대여 상태 : " + book.getStatus_check() + '\n' + "책 코드 : " + book.getPossess_code() + '\n');
 		loginuserAct.pos_code_update(book.possess_code);
 
 		btnchat.setOnAction(e2 -> openlenderinfo(book.getLender()));

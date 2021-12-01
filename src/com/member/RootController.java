@@ -89,7 +89,7 @@ public class RootController implements Initializable {
 
 			Parent second = FXMLLoader.load(getClass().getResource("/com/Main/BorderPaneView.fxml"));
 			Scene sc = new Scene(second);
-			primaryStage.setTitle("Join");
+			primaryStage.setTitle("AppMain");
 			primaryStage.setScene(sc);
 			primaryStage.show();
 			stage.close();
