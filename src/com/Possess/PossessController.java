@@ -2,10 +2,7 @@ package com.Possess;
 
 import java.io.IOException;
 import java.net.URL;
-
 import java.util.ResourceBundle;
-
-import com.Main.BookVO;
 
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
@@ -17,8 +14,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Modality;
@@ -26,7 +23,6 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import login.loginuserAct;
-import javafx.scene.control.TableColumn;
 
 public class PossessController implements Initializable {
 
@@ -87,7 +83,7 @@ public class PossessController implements Initializable {
 		Parent parent2 = FXMLLoader.load(getClass().getResource("form2.fxml"));
 
 		Button btnFormCancel = (Button) parent2.lookup("#btnFormCancel2");
-		Button btnchat = (Button) parent2.lookup("#openchatButton");
+		Button btnlenderinfo = (Button) parent2.lookup("#openlenderButton");
 		Label label = (Label) parent2.lookup("#TenNameLabel");
 //			//label con
 //			
@@ -97,7 +93,9 @@ public class PossessController implements Initializable {
 				+ "대여 상태 : " + book.getStatus_check() + '\n' + "책 코드 : " + book.getPossess_code() + '\n');
 		loginuserAct.pos_code_update(book.possess_code);
 
-		btnchat.setOnAction(e2 -> openlenderinfo(book.getLender()));
+		Button btnchat = (Button) parent2.lookup("#openchatButton");
+		btnchat.setOnAction(e2 -> openchat());
+		btnlenderinfo.setOnAction(e2 -> openlenderinfo(book.getLender()));
 		btnFormCancel.setOnAction(e2 -> dialog2.close());
 		Scene scene2 = new Scene(parent2);
 		dialog2.setScene(scene2);
@@ -105,6 +103,19 @@ public class PossessController implements Initializable {
 		dialog2.show();
 	}
 
+	public void openchat() {
+		Stage primaryStage = new Stage();
+		Parent root;
+		try {
+			root = FXMLLoader.load(getClass().getResource("/com/Chat/MyScene.fxml"));
+			Scene scene = new Scene(root);
+			primaryStage.setScene(scene);
+			primaryStage.show();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
 	public void openlenderinfo(int lender) {
 		if (lender == 0) {return ;}
 		

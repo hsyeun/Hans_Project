@@ -4,8 +4,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import com.Main.BookVO;
-
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,6 +13,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -23,7 +22,6 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import login.loginuserAct;
-import javafx.scene.control.TableColumn;
 
 public class BorrowController implements Initializable {
 
@@ -103,7 +101,8 @@ public class BorrowController implements Initializable {
 				"빌린 날짜 : " + book.getBorrow_date());
 		loginuserAct.pos_code_update(book.possess_code);
 
-		
+		Button btnchat = (Button) parent2.lookup("#openchatButton");
+		btnchat.setOnAction(e2 -> openchat());
 		btnFormCancel.setOnAction(e2 -> dialog2.close());
 		Scene scene2 = new Scene(parent2);
 		dialog2.setScene(scene2);
@@ -111,5 +110,17 @@ public class BorrowController implements Initializable {
 		dialog2.show();
 	}
 	
+	public void openchat() {
+		Stage primaryStage = new Stage();
+		Parent root;
+		try {
+			root = FXMLLoader.load(getClass().getResource("/com/Chat/MyScene.fxml"));
+			Scene scene = new Scene(root);
+			primaryStage.setScene(scene);
+			primaryStage.show();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 	
 }

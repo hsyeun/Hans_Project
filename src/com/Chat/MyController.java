@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import javafx.application.Platform;
 //import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -80,14 +79,13 @@ public class MyController implements Initializable {
 
 		Stage dialog2 = new Stage(StageStyle.UTILITY);
 		dialog2.initModality(Modality.WINDOW_MODAL);
-		dialog2.initOwner(chatButton.getScene().getWindow());
+		dialog2.initOwner(tableView.getScene().getWindow());
 		dialog2.setTitle("text");
 		Parent parent2 = FXMLLoader.load(getClass().getResource("form2.fxml"));
 
 		Button btnFormCancel = (Button) parent2.lookup("#btnFormCancel2");
 		Label label = (Label) parent2.lookup("#TenNameLabel");
-//			//label con
-//			
+		
 		ChatVO chat = tableView.getSelectionModel().getSelectedItem();
 		label.setText(chat.getMemo() + " " + chat.getChat_date());
 
