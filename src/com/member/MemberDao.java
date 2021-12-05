@@ -1,19 +1,15 @@
 package com.member;
 
-import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import oracle.jdbc.OracleTypes;
 import application.DBConnection;
-import login.loginuserAct;
 
 public class MemberDao {
+	
+	//로그인 정보 조회
 	public static void LoginSelect(MemberVO mVO) {
 		
 		String run = "SELECT member_code FROM member "
@@ -37,83 +33,7 @@ public class MemberDao {
 		}
 	}
 	
-//	public static int MemberCode(MemberVO mVO) {
-//		int mCode = 0;
-//		String run = "{ call memberlist(?, ?) }";
-//		
-//		try {
-//			Connection conn = DBConnection.getConnection();
-//			CallableStatement callableStatement = conn.prepareCall(run);
-//
-//			callableStatement.setString(1, mVO.getMember_id());
-//			callableStatement.registerOutParameter(2, OracleTypes.CURSOR);
-//			System.out.println();
-//			
-//			try {
-//				callableStatement.execute();
-//				mCode = callableStatement.getInt(mCode);
-//				System.out.println(mCode);
-//				
-//			} catch(SQLException e) {
-//				System.out.println("프로시저에서 에러 발생!");
-//				// System.err.format("SQL State: %s", e.getSQLState());
-//				System.err.format("SQL State: %s\n%s", e.getSQLState(), e.getMessage());
-//			}
-//		} catch(SQLException e) {
-//			e.printStackTrace();
-//		} catch(Exception e) {
-//			e.printStackTrace();
-//		} 
-//		return mCode;
-//	}
-	
-//	public static MemberVO MemberSelect(String mid){
-//		MemberVO mVO = new MemberVO();
-//		
-//		String run = "{ call memberlist(?, ?) }";
-//		
-//		try {
-//			Connection conn = DBConnection.getConnection();
-//			CallableStatement callableStatement = conn.prepareCall(run);
-//
-//			callableStatement.setString(1, mid);
-//			callableStatement.registerOutParameter(2, OracleTypes.CURSOR);
-//			System.out.println();
-//			
-//			try {
-//				callableStatement.execute();
-//				ResultSet rs = (ResultSet) callableStatement.getObject(2);
-//
-//				while (rs.next()) {
-//				
-//					mVO.setMember_code(rs.getInt(1));
-//					mVO.setMember_id(rs.getString(2));
-//					mVO.setMember_pw(rs.getString(3));
-//					mVO.setMember_name(rs.getString(4));
-//					mVO.setMember_phone(rs.getInt(5));
-//					mVO.setMember_email(rs.getString(6));
-//					mVO.setMember_num(rs.getInt(7));
-//					mVO.setMember_major(rs.getString(8));
-//					mVO.setMember_show(rs.getString(9));
-//
-//		
-//				}
-//
-//				System.out.println("성공");
-//
-//			} catch (SQLException e) {
-//				System.out.println("프로시저에서 에러 발생!");
-//				// System.err.format("SQL State: %s", e.getSQLState());
-//				System.err.format("SQL State: %s\n%s", e.getSQLState(), e.getMessage());
-//			}
-//		}catch(SQLException e) {
-//			e.printStackTrace();
-//		}catch(Exception e) {
-//			e.printStackTrace();
-//		}
-//		return mVO;
-//	}
-		
+	//회원가입 페이지에 입력된 데이터 저장	
 	public static void JoinInsert(MemberVO mVO) {
 						
 		String run = "INSERT INTO MEMBER"
@@ -144,7 +64,7 @@ public class MemberDao {
 	}
 	
 	
-	
+	//계정정보 조회
 	public static MemberVO MyPage(int mem_code) {
 		MemberVO mVO = new MemberVO();
 		String run = "SELECT * FROM MEMBER WHERE member_show = 'Y' and member_code = ?";

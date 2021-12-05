@@ -3,30 +3,21 @@ package com.member;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import com.Main.BookDAO;
-import com.Main.BookVO;
-
-import javafx.fxml.Initializable;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import login.loginuserAct;
-import javafx.scene.control.TextField;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
 
 public class RootController implements Initializable {
 
@@ -79,10 +70,6 @@ public class RootController implements Initializable {
 			loginFail.setContentText("Please input ID or Password");
 			loginFail.showAndWait();
 		} else {
-//		else if(inputID.getText().equals(mVO.getMember_id()) && inputPW.getText().equals(mVO.getMember_pw())){
-//			UserLogin.setText("Login Success");
-//			
-//		
 			loginuserAct.userupdate(mVO.getMember_id());
 			Stage primaryStage = new Stage();
 			Stage stage = (Stage) loginOK.getScene().getWindow();
@@ -94,10 +81,6 @@ public class RootController implements Initializable {
 			primaryStage.show();
 			stage.close();
 		}
-
-//		} else {
-//        	UserLogin.setText("Login Failed");
-//        }
 	}
 
 	// SignUP 버튼을 눌렀을 때 join페이지로 이동
@@ -152,84 +135,5 @@ public class RootController implements Initializable {
 		}
 	}
 
-	/*
-	 * //ID 중복 확인
-	 * 
-	 * @FXML public void checkExistID(){ // socket = MemberVO.socket;
-	 * 
-	 * if(getID.getText().equals("")) { Alert noCheckID = new
-	 * Alert(AlertType.ERROR); noCheckID.setHeaderText("ID input error");
-	 * noCheckID.setContentText("Please input ID"); noCheckID.showAndWait(); return;
-	 * }
-	 * 
-	 * try { String m = "checkID:" + getID.getText(); BufferedReader br = new
-	 * BufferedReader(new InputStreamReader(socket.getInputStream(),
-	 * StandardCharsets.UTF_8)); PrintWriter pw = new PrintWriter(new
-	 * OutputStreamWriter(socket.getOutputStream(), StandardCharsets.UTF_8), true);
-	 * 
-	 * pw.println(m); pw.flush();
-	 * 
-	 * checkNum = Integer.parseInt(br.readLine());
-	 * 
-	 * 
-	 * } catch (IOException e1) { e1.printStackTrace(); }
-	 * 
-	 * switch(checkNum) { case 0: Alert exist = new Alert(AlertType.INFORMATION);
-	 * exist.setHeaderText("ID is available");
-	 * exist.setContentText("ID is available"); exist.showAndWait(); break; case 1:
-	 * Alert noExist = new Alert(AlertType.WARNING);
-	 * noExist.setHeaderText("ID is exist");
-	 * noExist.setContentText("id cneck again"); noExist.showAndWait(); break; } }
-	 */
-
-	/*
-	 * @FXML public void goHome() throws Exception{ Stage primaryStage = new
-	 * Stage(); Parent signUp =
-	 * FXMLLoader.load(getClass().getResource("view/first.fxml")); //
-	 * signUp.getStylesheets().add(getClass().getResource("css/first.css").
-	 * toExternalForm()); primaryStage.setScene(new Scene(signUp));
-	 * primaryStage.show(); // primaryStage.setResizable(false);
-	 * 
-	 * Stage stage = (Stage)home.getScene().getWindow(); stage.close(); }
-	 */
-
-//	@FXML public void toHome() throws Exception {
-//		Stage primaryStage = new Stage();
-//		Stage stage = (Stage)UserLogin.getScene().getWindow();
-//
-//			Parent ob = FXMLLoader.load(getClass().getResource("view/first.fxml"));
-//			ob.getStylesheets().add(getClass().getResource("css/first.css").toExternalForm());
-//			Scene sc = new Scene(ob);
-//			primaryStage.setScene(sc);
-//	        primaryStage.show();
-//	        primaryStage.setResizable(false);
-//			stage.close();
-//	}
-
-//	@FXML public void toHome2() throws Exception {
-//		Stage primaryStage = new Stage();
-//		Stage stage = (Stage)ManagerLogin.getScene().getWindow();
-//
-//			Parent ob = FXMLLoader.load(getClass().getResource("view/first.fxml"));
-//			ob.getStylesheets().add(getClass().getResource("css/first.css").toExternalForm());
-//			Scene sc = new Scene(ob);
-//			primaryStage.setScene(sc);
-//	        primaryStage.show();
-//	        primaryStage.setResizable(false);
-//			stage.close();
-//	}
-
-//	@FXML public void toHome3() throws Exception {
-//		Stage primaryStage = new Stage();
-//		Stage stage = (Stage)UserSignupLabel.getScene().getWindow();
-//
-//			Parent ob = FXMLLoader.load(getClass().getResource("view/first.fxml"));
-//			ob.getStylesheets().add(getClass().getResource("css/first.css").toExternalForm());
-//			Scene sc = new Scene(ob);
-//			primaryStage.setScene(sc);
-//	        primaryStage.show();
-//	        primaryStage.setResizable(false);
-//			stage.close();
-//	}
 
 }

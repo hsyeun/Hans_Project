@@ -9,6 +9,8 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 	
+	//프로그램 시작화면
+
 	@Override
 	public void start(Stage primaryStage) {
 		try {
