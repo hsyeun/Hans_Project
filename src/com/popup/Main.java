@@ -15,7 +15,7 @@ public class Main extends Application{
 		root.setPrefSize(400, 400);
 		root.setAlignment(Pos.BOTTOM_RIGHT);
 		
-		Button btn = new Button("����");
+		Button btn = new Button("확인");
 		btn.setPrefWidth(80);
 		btn.setOnAction(event->Platform.exit());
 		root.getChildren().add(btn);
