@@ -1,3 +1,4 @@
+
 package popup;
 
 import javax.swing.JOptionPane;
@@ -7,11 +8,7 @@ public class ImpossiblePopup {
 
 		public static void main(String[] args) {
 			//TODO Auto-generated method stub
-			JOptionPane.showMessageDialog(null,"´ë¿© ½ÅÃ»ÀÌ ºÒ°¡´ÉÇÑ µµ¼­ÀÔ´Ï´Ù.");
+			JOptionPane.showMessageDialog(null,"ëŒ€ì—¬ ì‹ ì²­ì´ ë¶ˆê°€ëŠ¥í•œ ë„ì„œì…ë‹ˆë‹¤.");
 		}
 		
 	}
-
-
-
-

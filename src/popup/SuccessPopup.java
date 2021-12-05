@@ -1,3 +1,4 @@
+
 package popup;
 
 import javax.swing.JOptionPane;
@@ -6,9 +7,7 @@ public class SuccessPopup {
 
 		public static void main(String[] args) {
 			//TODO Auto-generated method stub
-			JOptionPane.showMessageDialog(null,"´ë¿© ½ÅÃ»ÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù.");
+			JOptionPane.showMessageDialog(null,"ëŒ€ì—¬ ì‹ ì²­ì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.");
 		}
 		
 	}
-
-

@@ -4,31 +4,31 @@ import java.util.Scanner;
 
 	public class main {
 		 public static void main(String[] args) {
-		  Scanner scanner=new Scanner(System.in); //½ºÄ³³Ê °´Ã¼ »ı¼º
-		  system systems=new system();//½Ã½ºÅÛÅ¬·¡½º °´Ã¼ »ı¼º
-		  String UserInput="";//»ç¿ëÀÚ°¡ ÀÔ·ÂÇÑ°ÍÀ» ³Ö¾îµÎ´Â º¯¼ö
-		  System.out.println("Ã¥°Ë»öÇÁ·Î±×·¥");
-		  systems.setting();//½Ã½ºÅÛÀÇ ¼¼ÆÃ¸Ş¼­µå ½ÇÇà
-		  while(true) {//¹«ÇÑ¹İº¹¹®
-		   System.out.println("1.Ã¥°Ë»ö 2.Ã¥¸®½ºÆ® 3.Ã¥Ãß°¡ÇÏ±â");
-		   UserInput=scanner.nextLine();//¿£ÅÍÈÄ ÀÔ·Â¹ŞÀº ¹®ÀÚ¸¦ UserInput¿¡ ³Ö¾îµÒ
-		   if(UserInput.equals("1")) {//1À» ÀÔ·ÂÇß´ÂÁö Ã¼Å©
-		    System.out.println("Ã£À» Ã¥À» ÀÔ·ÂÇÏ¼¼¿ä");
-		    UserInput=scanner.nextLine();//¿£ÅÍÈÄ ÀÔ·Â¹ŞÀº°É UserInput¿¡ ³Ö¾îµÒ
-		    systems.search(UserInput);//½Ã½ºÅÛÀÇ °Ë»ö¸Ş¼­µå¿¡ »ç¿ëÀÚ°¡ ÀÔ·ÂÇÑ°É ³Ñ°ÜÁÜ
+		  Scanner scanner=new Scanner(System.in); //ìŠ¤ìºë„ˆ ê°ì²´ ìƒì„±
+		  system systems=new system();//ì‹œìŠ¤í…œí´ë˜ìŠ¤ ê°ì²´ ìƒì„±
+		  String UserInput="";//ì‚¬ìš©ìê°€ ì…ë ¥í•œê²ƒì„ ë„£ì–´ë‘ëŠ” ë³€ìˆ˜
+		  System.out.println("ì±…ê²€ìƒ‰í”„ë¡œê·¸ë¨");
+		  systems.setting();//ì‹œìŠ¤í…œì˜ ì„¸íŒ…ë©”ì„œë“œ ì‹¤í–‰
+		  while(true) {//ë¬´í•œë°˜ë³µë¬¸
+		   System.out.println("1.ì±…ê²€ìƒ‰ 2.ì±…ë¦¬ìŠ¤íŠ¸ 3.ì±…ì¶”ê°€í•˜ê¸°");
+		   UserInput=scanner.nextLine();//ì—”í„°í›„ ì…ë ¥ë°›ì€ ë¬¸ìë¥¼ UserInputì— ë„£ì–´ë‘ 
+		   if(UserInput.equals("1")) {//1ì„ ì…ë ¥í–ˆëŠ”ì§€ ì²´í¬
+		    System.out.println("ì°¾ì„ ì±…ì„ ì…ë ¥í•˜ì„¸ìš”");
+		    UserInput=scanner.nextLine();//ì—”í„°í›„ ì…ë ¥ë°›ì€ê±¸ UserInputì— ë„£ì–´ë‘ 
+		    systems.search(UserInput);//ì‹œìŠ¤í…œì˜ ê²€ìƒ‰ë©”ì„œë“œì— ì‚¬ìš©ìê°€ ì…ë ¥í•œê±¸ ë„˜ê²¨ì¤Œ
 		   }
-		   else if(UserInput.equals("2")) { //2¸¦ ÀÔ·ÂÇß´ÂÁö Ã¼Å©
+		   else if(UserInput.equals("2")) { //2ë¥¼ ì…ë ¥í–ˆëŠ”ì§€ ì²´í¬
 		    systems.list();
 		    
 		   }
-		   else if(UserInput.equals("3")) { //3À» Ã¼Å©Çß´ÂÁö Ã¼Å©
-		    System.out.println("Ãß°¡ÇÒÃ¥ÀÇ ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä");
-		    UserInput=scanner.nextLine(); //¿£ÅÍÈÄ ³ª¿Â ¹®ÀÚ¸¦ ÀÔ·Â¹Ş°í ³Ö¾îµÒ
-		    systems.add(UserInput);//½Ã½ºÅÛÀÇ add¿¡ »ç¿ëÀÚ¿¡°Ô ÀÔ·Â¹ŞÀº°É ³Ö¾îÁÜ
+		   else if(UserInput.equals("3")) { //3ì„ ì²´í¬í–ˆëŠ”ì§€ ì²´í¬
+		    System.out.println("ì¶”ê°€í• ì±…ì˜ ì´ë¦„ì„ ì…ë ¥í•˜ì„¸ìš”");
+		    UserInput=scanner.nextLine(); //ì—”í„°í›„ ë‚˜ì˜¨ ë¬¸ìë¥¼ ì…ë ¥ë°›ê³  ë„£ì–´ë‘ 
+		    systems.add(UserInput);//ì‹œìŠ¤í…œì˜ addì— ì‚¬ìš©ìì—ê²Œ ì…ë ¥ë°›ì€ê±¸ ë„£ì–´ì¤Œ
 		    
 		   }
-		   else { //Àß¸øÇß´ÂÁö Ã¼Å©
-		    System.out.println("Àß¸øÀÔ·Â");
+		   else { //ì˜ëª»í–ˆëŠ”ì§€ ì²´í¬
+		    System.out.println("ì˜ëª»ì…ë ¥");
 		   }
 		  }
 		  
@@ -36,7 +36,3 @@ import java.util.Scanner;
 		 }
 
 		}
-
-
-
-

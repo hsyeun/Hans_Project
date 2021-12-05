@@ -1,3 +1,4 @@
+
 package popup;
 
 import javax.swing.JOptionPane;
@@ -6,7 +7,7 @@ public class UploadPopup {
 
 			public static void main(String[] args) {
 				//TODO Auto-generated method stub
-				JOptionPane.showMessageDialog(null,"Ã¥ µî·ÏÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù.");
+				JOptionPane.showMessageDialog(null,"ì±… ë“±ë¡ì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.");
 			}
 			
 }
