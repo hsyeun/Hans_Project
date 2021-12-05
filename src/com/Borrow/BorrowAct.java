@@ -11,6 +11,8 @@ import javafx.collections.ObservableList;
 import oracle.jdbc.OracleTypes;
 
 public class BorrowAct {
+	
+	//대여정보를 테이블에 저장
 	public static void BorrowInsert(BorrowListVO boli) {
 
 		String runSP = "{ call sp_insert_borrow(?, ?) }";
@@ -31,7 +33,8 @@ public class BorrowAct {
 		} finally {
 		}
 	}
-
+	
+	//대여행동을 할 때 책의 상태가 대여 가능인 것만 기능할 수 있도록 설정
 	public static int BorrowUniqueInsert(BorrowListVO boli) {
 		int pos_status = 0;
 		String runSP = "{ call sp_select_borrowStatus(?, ?) }";
@@ -53,7 +56,6 @@ public class BorrowAct {
 
 			} catch (SQLException e) {
 				System.out.println("프로시저에서 에러 발생!");
-				// System.err.format("SQL State: %s", e.getSQLState());
 				System.err.format("SQL State: %s\n%s", e.getSQLState(), e.getMessage());
 			}
 		} catch (SQLException e) {
@@ -66,7 +68,7 @@ public class BorrowAct {
 	}
 
 	
-
+	//로그인한 계정이 대여한 책 목록을 조회
 	public static ObservableList<BorrowListVO> BorrowSelect(int lender) {
 		ObservableList<BorrowListVO> bolis = FXCollections.observableArrayList();
 
@@ -104,7 +106,6 @@ public class BorrowAct {
 
 			} catch (SQLException e) {
 				System.out.println("프로시저에서 에러 발생!");
-				// System.err.format("SQL State: %s", e.getSQLState());
 				System.err.format("SQL State: %s\n%s", e.getSQLState(), e.getMessage());
 			}
 		} catch (SQLException e) {

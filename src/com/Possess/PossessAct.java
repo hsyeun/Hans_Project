@@ -71,7 +71,6 @@ public class PossessAct {
 
 			} catch (SQLException e) {
 				System.out.println("프로시저에서 에러 발생!");
-				// System.err.format("SQL State: %s", e.getSQLState());
 				System.err.format("SQL State: %s\n%s", e.getSQLState(), e.getMessage());
 			}
 		} catch (SQLException e) {

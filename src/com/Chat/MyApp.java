@@ -12,7 +12,6 @@ public class MyApp extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
-            // Read file fxml and draw interface.
             Parent root = FXMLLoader.load(getClass()
                     .getResource("MyScene.fxml"));
 

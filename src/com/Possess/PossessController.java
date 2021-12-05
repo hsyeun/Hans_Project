@@ -40,7 +40,6 @@ public class PossessController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
 
 		possess_name.setCellValueFactory(new PropertyValueFactory<>("book_name"));
 		possess_status.setCellValueFactory(new PropertyValueFactory<>("status_check"));

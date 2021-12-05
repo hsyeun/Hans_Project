@@ -1,13 +1,9 @@
 package com.Chat;
 
-//import java.math.BigDecimal;
 import java.sql.CallableStatement;
 import java.sql.Connection;
-//import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-//import java.util.Scanner;
-
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -52,7 +48,6 @@ public class SelectT1 {
 
 			} catch (SQLException e) {
 				System.out.println("프로시저에서 에러 발생!");
-				// System.err.format("SQL State: %s", e.getSQLState());
 				System.err.format("SQL State: %s\n%s", e.getSQLState(), e.getMessage());
 			}
 		} catch (SQLException e) {

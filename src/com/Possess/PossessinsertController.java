@@ -19,9 +19,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.stage.FileChooser;
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import javafx.stage.FileChooser.ExtensionFilter;
+import javafx.stage.Stage;
 import login.loginuserAct;
 
 public class PossessinsertController implements Initializable {
@@ -34,7 +33,6 @@ public class PossessinsertController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
 
 	}
 
@@ -84,15 +82,9 @@ public class PossessinsertController implements Initializable {
 		pane.setVgap(10);
 		
 		Stage primaryStage = new Stage();
-//		primaryStage.setScene(new Scene(pane, 200, 200));
-//		primaryStage.setTitle("이미지 불러오기");
-//		primaryStage.setResizable(false);
-//		primaryStage.show();
 		
 		FileChooser fileChooser = new FileChooser();
 		fileChooser.setTitle("이미지 불러오기");
-//        fileChooser.getExtensionFilters().add(new ExtensionFilter("Text Files", "*.txt"));
-//        fileChooser.getExtensionFilters().add(new ExtensionFilter("All Files", "*.*"));
 		fileChooser.getExtensionFilters().addAll(new ExtensionFilter("All Files", "*.*"));
 		File file = fileChooser.showOpenDialog(primaryStage);
 		if (file != null) {

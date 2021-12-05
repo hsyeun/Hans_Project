@@ -52,9 +52,6 @@ public class MyController implements Initializable {
 
 	}
 
-	// When user click on myButton
-	// this method will be called.
-
 	public void addChat(ActionEvent event) {
 		ChatVO chat = new ChatVO();
 		chat.setChat_writer(loginuserAct.userup());

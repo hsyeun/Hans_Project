@@ -1,12 +1,8 @@
 package com.Chat;
 
-//import java.math.BigDecimal;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.SQLException;
-//import java.sql.Timestamp;
-//import java.time.LocalDateTime;
-//import java.util.Scanner;
 
 public class InsertT1 {
 

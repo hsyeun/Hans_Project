@@ -31,17 +31,5 @@ public class Main extends Application{
 		
 	}
 }
-//	@Override
-//	public void start(Stage primaryStage) throws Exception {
-		// TODO Auto-generated method stub
-		
-//	}
-//	@Override
-//	public void start(Stage primaryStage) throws Exception {
-		// TODO Auto-generated method stub
-		
-//	}
-
-//}
 
 
